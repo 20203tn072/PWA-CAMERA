@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4A90E2" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="apple-touch-icon" href="imagenes/icons/192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="imagenes/icons/512.png" sizes="512x512" />
+    <title>PWA-CAMARA</title>
+    <style>
+      #cameraContainer { display: none; margin-top: 1rem; }
+      video { width: 100%; max-width: 480px; border-radius: 8px; background:#000; }
+      canvas { display:none; }
+      #fotoContainer img { max-width: 100%; border-radius:8px; margin-top: .75rem; }
+    </style>
+</head>
+<body>
+    <h1>PWA Cámara</h1>
+
+    <button id="openCamera">Abrir Cámara</button>
+
+    <div id="cameraContainer" aria-hidden="true">
+        <video id="video" autoplay playsinline></video>
+        <p>
+          <button id="takePhoto">Tomar Foto</button>
+        </p>
+    </div>
+
+    <canvas id="canvas"></canvas>
+
+    <div id="fotoContainer" aria-live="polite"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
