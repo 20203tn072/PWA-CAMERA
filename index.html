@@ -18,20 +18,20 @@
       video { width: 100%; height: auto; border-radius: 8px; background:#000; }
       canvas { display:none; }
       #fotoContainer { margin-top:1rem; display:block; }
-      /* Galería horizontal */
+      /* Galería horizontal (thumbnails más grandes) */
       #gallery {
         display:flex;
-        gap:.5rem;
+        gap:.6rem;
         overflow-x:auto;
-        padding: .5rem 0;
+        padding: .6rem 0;
         align-items:center;
         -webkit-overflow-scrolling: touch;
       }
       .thumb {
         position:relative;
         flex: 0 0 auto;
-        width: 120px;
-        height: 90px;
+        width: 160px;
+        height: 120px;
         border-radius:8px;
         overflow:hidden;
         background:#f5f5f5;
@@ -41,24 +41,23 @@
       .thumb .del {
         position:absolute; top:6px; right:6px;
         background: rgba(220,53,69,0.9); color:#fff; border:none;
-        padding:4px 6px; border-radius:6px; font-size:0.8rem;
+        padding:4px 6px; border-radius:6px; font-size:0.85rem;
       }
       .thumb .meta {
         position:absolute; left:6px; bottom:6px; right:6px;
-        text-align:left; font-size:0.7rem; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,.6);
+        text-align:left; font-size:0.75rem; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,.6);
       }
-      /* responsive */
-      @media (max-width:420px){ .thumb{ width:96px; height:72px } }
+      @media (max-width:420px){ .thumb{ width:120px; height:90px } }
     </style>
 </head>
 <body>
     <h1>PWA Cámara</h1>
 
     <div id="controls">
-      <button id="openCamera">Abrir Cámara</button>
-      <button id="switchCamera" disabled>Usar frontal</button>
-      <button id="takePhoto" disabled>Tomar Foto</button>
-      <button id="closeCamera" disabled>Cerrar Cámara</button>
+      <button id="openCamera">Abrir cámara</button>
+      <button id="switchCamera" style="display:none">Cámara trasera</button>
+      <button id="takePhoto" style="display:none">Tomar foto</button>
+      <button id="closeCamera" style="display:none">Cerrar cámara</button>
     </div>
 
     <div id="cameraContainer" aria-hidden="true">
